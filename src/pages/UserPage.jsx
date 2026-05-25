@@ -13,7 +13,7 @@ const UserPage = () => {
       const navigate = useNavigate()
     
       const sendData = async () =>{
-          await axios.post('http://localhost:3000/send-data',formData)
+          await axios.post('https://curdnodebackend.onrender.com/send-data',formData)
       }
       const handleSubmit = (e)=>{
           e.preventDefault()

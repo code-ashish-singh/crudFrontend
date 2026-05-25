@@ -37,7 +37,7 @@ const AdminPage = () => {
         }
     const getData = async ()=>{
         try {
-            let res =  await axios.get('http://localhost:3000/get-data')
+            let res =  await axios.get('https://curdnodebackend.onrender.com/get-data')
             res = res.data.Data
             setUserData(res)
           console.log(userData)
@@ -58,7 +58,7 @@ const AdminPage = () => {
 }).then( async (result) => {
   if (result.isConfirmed){
     setTimeout( async ()=>{
-        let res =  await axios.delete(`http://localhost:3000/deleteData/${id}`);
+        let res =  await axios.delete(`https://curdnodebackend.onrender.com/deleteData/${id}`);
            console.log(res)
             getData();
     },500)
@@ -91,7 +91,7 @@ const AdminPage = () => {
           let idx = id
           console.log('id',id)
           console.log('formdata',formData)
-            await axios.put(`http://localhost:3000/update-data/${idx}`,formData);
+            await axios.put(`https://curdnodebackend.onrender.com/update-data/${idx}`,formData);
             setVisible(false)
             setId(null)
             getData()
